@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfurat - Качественная мебель для вашего дома</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Alfurat - современное производство качественной мебели на заказ">
+    <meta name="keywords"
+        content="мебель, мебель на заказ, кухня, спальня, офисная мебель, доставка мебели, сборка мебели">
+    <meta name="author" content="Your Name">
+</head>
+
+<body>
+    <section class="hotbar">
+        <div class="logo">
+            <h1>Alfurat<span>.tj</span></h1>
+            <button class="menu-toggle" onclick="shownav()"><i class="fas fa-bars"></i></button>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#main">Главная</a></li>
+                <li><a href="#catalog">Каталог</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#reviews">Отзывы</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </nav>
+
+        </div>
+    </section>
+    <div class="hiddenModal"></div>
+
+
+    <section class="hero" id="main">
+        <div class="container">
+            <h2>Мебель вашей мечты - реальность</h2>
+            <p>Изготовление мебели на заказ по индивидуальным размерам и дизайну</p>
+            <a href="catalog.html"><button class="btn">Выбрать мебель</button></a>
+        </div>
+    </section>
+
+    <section class="advantages">
+        <div class="container">
+            <h2>Почему выбирают нас</h2>
+            <div class="advantages-grid">
+                <div class="advantage-item">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Качество</h3>
+                    <p>Используем только проверенные материалы от ведущих производителей</p>
+                </div>
+                <div class="advantage-item">
+                    <i class="fas fa-ruler-combined"></i>
+                    <h3>Индивидуальный подход</h3>
+                    <p>Изготовим мебель по вашим размерам и дизайну</p>
+                </div>
+                <div class="advantage-item">
+                    <i class="fas fa-truck"></i>
+                    <h3>Доставка и сборка</h3>
+                    <p>Бесплатная доставка и профессиональная сборка</p>
+                </div>
+                <div class="advantage-item">
+                    <i class="fas fa-medal"></i>
+                    <h3>Гарантия</h3>
+                    <p>Гарантия на всю продукцию - 3 года</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="catalog" id="catalog">
+        <div class="container">
+            <h2>Каталог мебели</h2>
+            <div class="products-grid">
+                <!-- Товары будут подгружаться динамически или добавляться вручную -->
+                <div class="product-item1">
+                    <img src="https://avatars.mds.yandex.net/i?id=cb7a5b2f3a4660f0f44099fccf85a83fae85cea1-9601511-images-thumbs&n=13"
+                        alt="Кухня">
+                    <h3>Кухня</h3>
+                    <p class="price">от 45 000 ₽</p>
+                    <a href="catalog.html"><button class="btn">Подробнее</button></a>
+                </div>
+                <div class="product-item1">
+                    <img src="https://avatars.mds.yandex.net/i?id=f3885e700b661022befc3a2d558e13759199101a-4571710-images-thumbs&n=13"
+                        alt="Офисная">
+                    <h3>Офисная</h3>
+                    <p class="price">от 65 000 ₽</p>
+                    <a href="catalog.html"><button class="btn">Подробнее</button></a>
+                </div>
+                <div class="product-item1">
+                    <img src="https://avatars.mds.yandex.net/i?id=ff010f7d040511d9b6cee6f9c524844dcb9ac786-8497446-images-thumbs&n=13"
+                        alt="Спальня">
+                    <h3>Спальня</h3>
+                    <p class="price">от 55 000 ₽</p>
+                    <a href="catalog.html"><button class="btn">Подробнее</button></a>
+                </div>
+                <a href="catalog.html"><button class="btn view-all">Весь Каталог</button></a>
+            </div>
+    </section>
+
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>О нашей компании</h2>
+                <p>Alfurat - это современное производство качественной мебели с 20xx года. Мы создаем мебель, которая
+                    сочетает в себе функциональность, эргономику и стильный дизайн.</p>
+                <p>Наша команда состоит из опытных дизайнеров, конструкторов и мастеров, которые воплотят в жизнь любые
+                    ваши идеи. Мы используем только экологичные и безопасные материалы, отвечающие всем стандартам
+                    качества.</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> Более 12 лет на рынке</li>
+                    <li><i class="fas fa-check"></i> Собственное производство</li>
+                    <li><i class="fas fa-check"></i> Более 1000 довольных клиентов</li>
+                    <li><i class="fas fa-check"></i> Индивидуальный подход к каждому</li>
+                </ul>
+            </div>
+            <div class="about-image">
+                <img src="https://avatars.mds.yandex.net/i?id=fe8742db0e04d5e3454c6b98304143a5d9255fbc-5869527-images-thumbs&n=13"
+                    alt="Наше производство">
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <h2>Отзывы наших клиентов</h2>
+            <!-- Elfsight All-in-One Reviews | Untitled All-in-One Reviews -->
+            <script src="https://elfsightcdn.com/platform.js" async></script>
+            <div class="elfsight-app-67826d05-3afc-4001-aa23-8bcab7873693" data-elfsight-app-lazy></div>
+        </div>
+    </section>
+
+
+
+
+    <section class="contacts" id="contacts">
+        <div class="container">
+            <h2>Контакты</h2>
+            <div class="contacts-grid">
+                <div class="contact-info">
+                    <h3>Наши контакты</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> г. xxxxx, ул. xxxxxxx, 1</p>
+                    <p><i class="fas fa-phone"></i> +xxx (xx) xxx xx-xx</p>
+                    <p><i class="fas fa-envelope"></i> youremail@mail.com</p>
+                    <p><i class="fas fa-clock"></i> Пн-Пт: 9:00 - 20:00, Сб-Вс: 10:00 - 18:00</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="map">
+                    <iframe
+                        src="https://www.google.com/maps/d/embed?mid=1MqCAiyJTkSpp-UxoQ7mTOP1NPszSs4Q&ehbc=2E312F&noprof=1"
+                        width="640" height="480"></iframe>
+                </div>
+            </div>
+    </section>
+
+
+
+
+    <footer class="footer-main">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Alfurat<span>.tj</span></h3>
+                    <p>© 2025 Все права защищены</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Меню</h4>
+                    <ul>
+                        <li><a href="#main">Главная</a></li>
+                        <li><a href="#catalog">Каталог</a></li>
+                        <li><a href="#about">О нас</a></li>
+                        <li><a href="#reviews">Отзывы</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contacts">
+                    <h4>Контакты</h4>
+                    <p><i class="fas fa-phone"></i> +xxx xx xxx xxxx</p>
+                    <p><i class="fas fa-envelope"></i> youremail@mail.ru</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
