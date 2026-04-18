@@ -1,6 +1,6 @@
 async function fetchProducts() {
     try {
-        const response = await fetch('http://localhost:3000/api/products');
+        const response = await fetch('https://alfurat.onrender.com/api/products');
         const products = await response.json();
         const productsGrid = document.querySelector('.products-grid');
         productsGrid.innerHTML = '';
@@ -124,7 +124,7 @@ async function deleteProduct(id) {
     if (!confirm('Вы точно хотите удалить этот товар?')) return;
 
     try {
-        const response = await fetch(`http://localhost:3000/api/products/${id}`, {
+        const response = await fetch(`https://alfurat.onrender.com/api/products/${id}`, {
             method: 'DELETE',
             headers: {
                 // Обязательно передаем токен, иначе сервер не разрешит удаление
@@ -166,7 +166,7 @@ async function editProduct(id) {
     console.log('Токен:', localStorage.getItem('token'));
 
     try {
-        const response = await fetch(`http://localhost:3000/api/products/${id}`, {
+        const response = await fetch(`https://alfurat.onrender.com/api/products/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
