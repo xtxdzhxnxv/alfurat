@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель управления Alfurat</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="container" style="max-width: 500px; padding-top: 50px;">
+        <button onclick="location.href='catalog.html'" style="background-color: #8B5E3C; color: white; padding: 15px; border: none; border-radius: 8px; cursor: pointer;">
+            ← Назад в каталог
+        </button>
+        <h2>Добавить мебель</h2>
+        
+        <form id="add-product-form" style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
+            <input type="text" id="p-name" placeholder="Название (например: Диван Люкс)" style="color: #8B5E3C; ;" required>
+            <input type="number" id="p-price" placeholder="Цена (только цифры)" required>
+            
+            <select id="p-category">
+                <option value="Кухня">Кухня</option>
+                <option value="Гостиная">Гостиная</option>
+                <option value="Спальня">Спальня</option>
+                <option value="Детская">Детская</option>
+                <option value="Офисная">Офисная</option>
+                <option value="Гардеробная">Гардеробная</option>
+            </select>
+
+            <input type="file" id="p-file" accept="image/*" required>
+            <textarea id="p-desc" placeholder="Описание (необязательно)"></textarea>
+
+            <button type="submit" style="background: #8B5E3C; color: white; padding: 15px; border: none; border-radius: 8px; cursor: pointer;">
+                Опубликовать на сайт
+            </button>
+        </form>
+    </div>
+
+    <script>
+        // ПРОВЕРКА: Если токена нет — выгоняем на главную
+        if (!localStorage.getItem('token')) {
+            alert("Доступ запрещен!");
+            location.href = 'catalog.html';
+        }
+
+        document.getElementById('add-product-form').onsubmit = async (e) => {
+            e.preventDefault();
+
+            const fileInput = document.getElementById('p-file');
+            const formData = new FormData();
+            formData.append('image', fileInput.files[0]);
+
+            try {
+                // Сначала загружаем изображение
+                const uploadRes = await fetch('https://alfurat.onrender.com/api/upload', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': 'Bearer ' + localStorage.getItem('token')  // Исправлено на заглавную букву
+                    },
+                    body: formData  // Используем FormData вместо JSON
+                });
+
+                if (!uploadRes.ok) {
+                    throw new Error('Ошибка загрузки изображения: ' + uploadRes.statusText);
+                }
+
+                const uploadData = await uploadRes.json();
+
+                // Теперь создаём productData с полученным imageUrl
+                const productData = {
+                    name: document.getElementById('p-name').value,
+                    price: Number(document.getElementById('p-price').value),
+                    category: document.getElementById('p-category').value,
+                    image: uploadData.imageUrl,
+                    description: document.getElementById('p-desc').value
+                };
+
+                // Отправляем продукт
+                const response = await fetch('https://alfurat.onrender.com/api/products/add', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer ' + localStorage.getItem('token')
+                    },
+                    body: JSON.stringify(productData)
+                });
+
+                if (response.ok) {
+                    alert("Ура! Товар добавлен в каталог.");
+                    location.href = 'catalog.html';
+                } else {
+                    const err = await response.text();
+                    alert("Ошибка: " + err);
+                }
+            } catch (error) {
+                alert("Произошла ошибка: " + error.message);
+            }
+        }
+    </script>
+</body>
+</html>
